@@ -1,0 +1,33 @@
+Criação da Entidade Carteira:
+Implementação da entidade Carteira, que representa a conta de um cliente.
+Definição dos atributos:
+Código da Carteira (UUID): Identificador único da carteira.
+CPF (único): Cadastro de Pessoa Física, utilizado para identificação única do titular.
+E-mail (único): Endereço de e-mail associado ao titular da carteira.
+Nome do Titular: Nome completo do titular da carteira.
+Saldo Atual: Valor atual disponível na carteira.
+
+/*
+Criação da Entidade Transferências:
+Implementação da entidade Transferências para registrar as transações entre diferentes carteiras.
+Definição dos atributos:
+Código da Transferência (UUID): Identificador único para cada transferência.
+Carteira de Origem: Referência à carteira de onde o dinheiro será debitado.
+Carteira de Destino: Referência à carteira para onde o dinheiro será creditado.
+Valor da Transferência: Quantia transferida entre as carteiras.
+Data e Hora da Transferência: Momento exato em que a transferência foi realizada.
+
+
+*/
+
+/*
+
+Criação da Entidade Histórico de Depósitos:
+Implementação da entidade Histórico de Depósitos para armazenar informações detalhadas sobre os depósitos realizados.
+Definição dos atributos:
+Código Único do Depósito: Identificador exclusivo para cada depósito realizado.
+Carteira de Destino: Referência à carteira para onde o dinheiro foi depositado.
+Valor Depositado: Quantia depositada na carteira.
+Data e Hora do Depósito: Registro do momento em que o depósito foi efetuado.
+Endereço IP de Origem: IP de onde foi realizado o depósito, importante para segurança e auditoria.
+*/

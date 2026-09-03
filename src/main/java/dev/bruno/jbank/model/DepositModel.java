@@ -14,7 +14,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "tb_deposits")
-public class Deposit {
+public class DepositModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,7 +34,7 @@ public class Deposit {
     @Column(name = "ip_deposit")
     private String ip;
 
-    public Deposit() {
+    public DepositModel() {
     }
 
     public Long getId() {

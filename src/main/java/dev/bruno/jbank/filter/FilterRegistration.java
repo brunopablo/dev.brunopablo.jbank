@@ -9,19 +9,19 @@ public class FilterRegistration {
 
     private final IpFilter ipFilter;
 
-    public FilterRegistration(IpFilter ipFilter) {
+        public FilterRegistration(IpFilter ipFilter) {
         this.ipFilter = ipFilter;
     }
 
     @Bean
     public FilterRegistrationBean<IpFilter> filterRegistrationBean(){
 
-        var registrationBean = new FilterRegistrationBean<IpFilter>();
+        var filterRegistrationBean = new FilterRegistrationBean<IpFilter>();
 
-        registrationBean.setFilter(ipFilter);
+        filterRegistrationBean.setFilter(ipFilter);
 
-        registrationBean.setOrder(0);
+        filterRegistrationBean.setOrder(0);
 
-        return registrationBean;
+        return filterRegistrationBean;
     }
 }

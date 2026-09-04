@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 import org.springframework.stereotype.Service;
 
-import dev.bruno.jbank.dto.SaveWalletRequestDto;
+import dev.bruno.jbank.controller.dto.SaveWalletRequestDto;
 import dev.bruno.jbank.exception.WalletDataAlreadyExistException;
 import dev.bruno.jbank.model.WalletModel;
 import dev.bruno.jbank.repository.WalletRepository;

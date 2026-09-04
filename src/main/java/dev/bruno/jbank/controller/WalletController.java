@@ -8,10 +8,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import dev.bruno.jbank.dto.SaveWalletRequestDto;
+import dev.bruno.jbank.controller.dto.SaveWalletRequestDto;
 import dev.bruno.jbank.service.WalletService;
+import jakarta.validation.Valid;
 
-@RestController()
+@RestController
 @RequestMapping("/wallet")
 public class WalletController {
 
@@ -22,7 +23,7 @@ public class WalletController {
     }
 
     @PostMapping()
-    public ResponseEntity<Void> saveWallet(@RequestBody SaveWalletRequestDto walletData){
+    public ResponseEntity<Void> saveWallet(@RequestBody @Valid SaveWalletRequestDto walletData){
 
         var walletEntity = walletService.saveWallet(walletData);
 

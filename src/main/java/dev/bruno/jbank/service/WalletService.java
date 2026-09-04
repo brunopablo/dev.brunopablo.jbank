@@ -23,7 +23,7 @@ public class WalletService {
         var dataSaved = walletRepository.existsByCpfOrEmail(walletData.cpf(),walletData.email());
 
         if (dataSaved) {
-            throw new WalletDataAlreadyExistException("cpf or email already exists");
+            throw new WalletDataAlreadyExistException("cpf or email already exist | teste");
         }
 
         var walletModel = new WalletModel();

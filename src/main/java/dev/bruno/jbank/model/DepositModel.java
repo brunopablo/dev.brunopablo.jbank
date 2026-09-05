@@ -3,6 +3,8 @@ package dev.bruno.jbank.model;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -29,6 +31,7 @@ public class DepositModel {
     private BigDecimal sentValue;
 
     @Column(name = "date_time_deposit")
+    @CreationTimestamp
     private LocalDateTime dateDeposit;
     
     @Column(name = "ip_deposit")

@@ -45,7 +45,6 @@ public class WalletService {
 
         walletModel.setBalance(BigDecimal.ZERO);
 
-
         return walletRepository.save(walletModel);
     }
 
@@ -61,7 +60,6 @@ public class WalletService {
 
             walletRepository.deleteById(walletId);
         }
-
 
         return walletModel.isPresent();
     }

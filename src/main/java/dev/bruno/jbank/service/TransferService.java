@@ -56,7 +56,7 @@ public class TransferService {
     }
 
 
-    private TransferModel persistTransfer(PostTransferRequestDto transferData, WalletModel sender, WalletModel receiver) {
+    private TransferModel persistTransfer(PostTransferRequestDto transferData, WalletModel sender, WalletModel receiver ) {
         var transfer = new TransferModel();
 
         transfer.setSender(sender);

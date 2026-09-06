@@ -11,18 +11,18 @@ import dev.bruno.jbank.repository.dto.StatementViewProjection;
 
 @Repository
 public interface WalletRepository extends JpaRepository<WalletModel, Long>{
-    
+
     String SQL_STATEMENT = """
                 SELECT
                     id_transfer as statement_id,
                     'transfer' as type,
                     value_transfer as statement_value,
-                    id_sender as wallet_receiver,
-                    id_receiver as wallet_sender,
+                    id_sender as wallet_sender,
+                    id_receiver as wallet_receiver,
                     date_transfer as statement_date_time
                 FROM
                     tb_transfers
-                WHERE wallet_receiver = ?1 OR wallet_sender = ?1
+                WHERE id_sender = ?1 OR id_receiver = ?1
 
                 UNION ALL
 
@@ -34,20 +34,20 @@ public interface WalletRepository extends JpaRepository<WalletModel, Long>{
                     CAST(NULL AS BIGINT) as wallet_sender,  -- Usando NULL com Cast explícito
                     date_time_deposit as statement_date_time
                 FROM tb_deposits
-                WHERE wallet_receiver = ?1;        
+                WHERE id_wallet = ?1        
             """;
 
     String SQL_COUNT = """
-            SELECT (*) FROM 
+            SELECT COUNT(*) FROM 
             (
             """ + SQL_STATEMENT + """
-            )
-            AS total
+            )AS total
             """;
     
-    @Query(nativeQuery = true, countQuery = SQL_COUNT, value = SQL_STATEMENT)
+    @Query(nativeQuery = true, 
+           countQuery = SQL_COUNT, 
+           value = SQL_STATEMENT)
     Page<StatementViewProjection> findStatements(Long idWallet, PageRequest pageRequest);
-    
     
     boolean existsByCpfOrEmail(String cpf, String email);
 }
